@@ -8,6 +8,7 @@ const seedData = async () => {
   try {
     await Category.deleteMany({});
     await Product.deleteMany({});
+    await User.deleteMany({});
 
     const adminUser = await User.create({
       username: 'admin',
