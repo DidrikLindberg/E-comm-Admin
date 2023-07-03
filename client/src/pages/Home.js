@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
             <div className="lg:w-1/2">
               <h1 className="text-4xl lg:text-6xl font-bold mb-4">Welcome to Our New Ecommerce Website</h1>
               <p className="text-lg text-gray-600 mb-8">Shop our collection of shirts, shoes, hats, music, and shorts.</p>
-              <a href="#" className="btn btn-primary">Shop Now</a>
+              <Link to="/shopping" className="btn btn-primary">Shop Now</Link>
             </div>
             <div className="lg:w-1/2">
               <img src="/imgs/BigLandingImage.jpg" alt="Banner Image" className="w-full rounded-lg shadow-lg" />

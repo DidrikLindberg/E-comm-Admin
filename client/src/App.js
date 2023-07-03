@@ -13,7 +13,8 @@ import { setContext } from "@apollo/client/link/context";
 import "./style.css";
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
+// import Products from "./components/ProductsList";
+import Shopping from "./pages/Shopping";
 
 
 // Create an HTTP link to the GraphQL server
@@ -56,7 +57,7 @@ function App() {
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
-            <Route path="/products" element={<Products />} />
+            <Route path="/shopping" element={<Shopping />} />
             {/* <Route path="/products/:id" element={<SingleProduct />} /> */}
             {/* <Route path="/cart" element={<Cart />} /> */}
             {/* <Route path="/success" element={<Success />} /> */}
