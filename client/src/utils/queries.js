@@ -98,3 +98,25 @@ export const UPDATE_CART_ITEM_QUANTITY = gql`
     }
   }
 `;
+
+
+
+export const ADD_PRODUCT = gql`
+  mutation AddProduct($title: String!, $image: String, $description: String!) {
+    addProduct(title: $title, image: $image, description: $description) {
+      title
+      image
+      description
+    }
+  }
+`;
+
+export const DELETE_PRODUCT = gql`
+  mutation DeleteProduct($productId: ID!) {
+    deleteProduct(productId: $productId) {
+      title
+      image
+      description
+    }
+  }
+`;

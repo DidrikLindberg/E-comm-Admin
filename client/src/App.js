@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
 import Shopping from "./pages/Shopping";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminProductLibrary from "./pages/AdminProductLibrary";
 
 
 // Create an HTTP link to the GraphQL server
@@ -60,32 +61,7 @@ function App() {
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
             <Route path="/shopping" element={<Shopping />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            {/* <Route path="/products/:id" element={<SingleProduct />} /> */}
-            {/* <Route path="/cart" element={<Cart />} /> */}
-            {/* <Route path="/success" element={<Success />} /> */}
-            {/* <Route path="/orderHistory" element={<OrderHistory />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admin/products" element={<AdminProducts />} />
-            <Route path="/admin/products/:id" element={<AdminSingleProduct />} />
-            <Route path="/admin/categories" element={<AdminCategories />} />
-            <Route path="/admin/categories/:id" element={<AdminSingleCategory />} />
-            <Route path="/admin/orders" element={<AdminOrders />} />
-            <Route path="/admin/orders/:id" element={<AdminSingleOrder />} />
-            <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/users/:id" element={<AdminSingleUser />} />
-            <Route path="/admin/tags" element={<AdminTags />} />
-            <Route path="/admin/tags/:id" element={<AdminSingleTag />} />
-            <Route path="/admin/addProduct" element={<AdminAddProduct />} />
-            <Route path="/admin/addCategory" element={<AdminAddCategory />} />
-            <Route path="/admin/addTag" element={<AdminAddTag />} />
-            <Route path="/admin/addUser" element={<AdminAddUser />} />
-            <Route path="/admin/addOrder" element={<AdminAddOrder />} />
-            <Route path="/admin/addOrderItem" element={<AdminAddOrderItem />} />
-            <Route path="/admin/updateProduct/:id" element={<AdminUpdateProduct />} />
-            <Route path="/admin/updateCategory/:id" element={<AdminUpdateCategory />} />
-            <Route path="/admin/updateTag/:id" element={<AdminUpdateTag />} />
-            <Route path="/admin/updateUser/:id" element={<AdminUpdateUser />} />
-            <Route path="/admin/updateOrder/:id" element={<AdminUpdateOrder />} /> */}
+            <Route path="/admin/products" element={<AdminProductLibrary />} />
 
           </Routes>
         </Router>

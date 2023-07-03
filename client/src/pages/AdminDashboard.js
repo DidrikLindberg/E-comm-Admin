@@ -16,7 +16,7 @@ const AdminDashboard = () => {
                   <Link to="/admin/home" className="text-gray-600 hover:text-gray-800">Home</Link>
                 </li>
                 <li>
-                  <Link to="/admin/product-library" className="text-gray-600 hover:text-gray-800">Product Library</Link>
+                  <Link to="/admin/products" className="text-gray-600 hover:text-gray-800">Product Library</Link>
                 </li>
                 <li>
                   <Link to="/admin/settings" className="text-gray-600 hover:text-gray-800">Settings</Link>

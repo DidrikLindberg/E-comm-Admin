@@ -30,7 +30,26 @@ const resolvers = {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
-    }
+    },
+    addProduct: async (parent, { title, image, description }, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to add a product.');
+      }
+
+
+      const product = await Product.create({ title, image, description });
+
+      return product;
+    },
+    removeProduct: async (parent, { productId }, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to delete a product.');
+      }
+
+      const product = await Product.deleteOne({ _id: productId });
+
+      return product;
+  }
   }
 };
 
