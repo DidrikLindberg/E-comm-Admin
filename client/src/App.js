@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -13,12 +13,13 @@ import { setContext } from "@apollo/client/link/context";
 import "./style.css";
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-import { Products } from "./pages/Products";
+import Products from "./pages/Products";
 
 
 // Create an HTTP link to the GraphQL server
+// Create an HTTP link to the GraphQL server
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql", // Update the URI to the desired URL
 });
 
 // Create an auth link to include the authentication token in the headers

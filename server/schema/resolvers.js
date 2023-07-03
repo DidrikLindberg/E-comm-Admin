@@ -9,7 +9,21 @@ const resolvers = {
     },
     products: async () => {
       return Product.find();
-    }
+    },
+    categories: async () => {
+      return Category.find();
+    },
+    orders: async () => {
+      return Order.find();
+    },
+    orderItems: async () => {
+      return OrderItem.find();
+    },
+
+
+  
+
+    
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

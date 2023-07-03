@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { User, Category, Product } = require('../models');
+const dotenv = require('dotenv');
+dotenv.config();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ecomdb');
+mongoose.connect(process.env.MONGODB_URI );
 
 const seedData = async () => {
   try {
@@ -11,14 +13,14 @@ const seedData = async () => {
     await User.deleteMany({});
 
     const adminUser = await User.create({
-      username: 'admin',
+      username: 'admin1',
       email: 'admin@admin.com',
       role: 'admin',
       password: await bcrypt.hash('admin123', 10),
     });
 
     const customerUser = await User.create({
-      username: 'customer',
+      username: 'customer1',
         email: 'customer@customer.com',
         role: 'customer',
       password: await bcrypt.hash('customer123', 10),
