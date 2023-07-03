@@ -15,6 +15,7 @@ import "./style.css";
 import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
 import Shopping from "./pages/Shopping";
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 // Create an HTTP link to the GraphQL server
@@ -58,6 +59,7 @@ function App() {
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
             <Route path="/shopping" element={<Shopping />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             {/* <Route path="/products/:id" element={<SingleProduct />} /> */}
             {/* <Route path="/cart" element={<Cart />} /> */}
             {/* <Route path="/success" element={<Success />} /> */}
