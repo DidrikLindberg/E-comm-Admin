@@ -34,11 +34,14 @@ const Login = (props) => {
             const { data } = await login({
                 variables: { ...formState },
             });
-
+console.log(data)
+console.log("Test1")
 
             if (data && data.login) {
                 Auth.login(data.login.token);
-                navigate("/");
+                console.log(data.login.token);
+                console.log("test")
+                navigate("/shopping");
                 
             }
         } catch (e) {
