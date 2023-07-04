@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import Shopping from "./pages/Shopping";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProductLibrary from "./pages/AdminProductLibrary";
+import Login from "./pages/Login";
 
 
 // Create an HTTP link to the GraphQL server
@@ -27,10 +28,13 @@ const httpLink = createHttpLink({
 
 // Create an auth link to include the authentication token in the headers
 const authLink = setContext((_, { headers }) => {
+  console.log("authLink");
   // Get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
+  console.log(token);
   // Return the headers to the context so httpLink can read them
   return {
+    console: console.log(token),
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",
@@ -62,6 +66,7 @@ function App() {
             <Route path="/shopping" element={<Shopping />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProductLibrary />} />
+            <Route path="/login" element={<Login />} />
 
           </Routes>
         </Router>

@@ -43,12 +43,19 @@ const typeDefs = gql`
     orderItems: [OrderItem!]!
     
   }
+    type Auth {
+    token: String!
+    user: User
+  }
+
+  
 
   type Mutation {
+    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): User!
     addProduct(title: String!, image: String, description: String!): Product!
     removeProduct(productId: ID!): Product
-    
+
   }
 `;
 
