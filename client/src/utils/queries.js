@@ -41,6 +41,8 @@ query GetProducts {
   }
 `;
 
+export const GET_ROLE = gql`
+
 export const GET_PRODUCT = gql`
   query GetProduct($productId: ID!) {
     product(id: $productId) {
