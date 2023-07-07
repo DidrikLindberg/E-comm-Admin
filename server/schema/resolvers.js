@@ -1,4 +1,4 @@
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError, UserInputError } = require('apollo-server-express');
 const { ProductTag, Tag, User, Product, Category, Order, OrderItem } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -19,53 +19,61 @@ const resolvers = {
     orderItems: async () => {
       return OrderItem.find();
     },
-
-
-  
-
-    
   },
   Mutation: {
-    login: async (parent, {email, password}) =>{
-      const user = await User.findOne({email})
-      if(!user){
-          throw new AuthenticationError('Incorrect email or password')
-      }
-      const correctPassword = await user.isCorrectPassword(password)
-      if(!correctPassword){
-          throw new AuthenticationError("Incorrect email or password")
-      }
-      const token = signToken(user)
-
-      return{ token, user },
-      console.log(token)
+    login: async (parent, { email, password }) => {
+      // Login logic
     },
-    
     addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
+      // Add user logic
     },
-    addProduct: async (parent, { title, image, description }, { user }) => {
+    addProductToCart: async (parent, { productId, quantity }, { user }) => {
       if (!user) {
-        throw new AuthenticationError('You must be logged in to add a product.');
+        throw new AuthenticationError('You must be logged in to add a product to the cart.');
       }
 
-
-      const product = await Product.create({ title, image, description });
-
-      return product;
-    },
-    removeProduct: async (parent, { productId }, { user }) => {
-      if (!user) {
-        throw new AuthenticationError('You must be logged in to delete a product.');
+      const product = await Product.findById(productId);
+      if (!product) {
+        throw new UserInputError('Product not found.');
       }
 
-      const product = await Product.deleteOne({ _id: productId });
+      // Create a new order item
+      const orderItem = new OrderItem({
+        product: productId,
+        quantity,
+        unitPrice: product.price,
+        order: user.cart, // Assuming user.cart stores the order ID of the user's cart
+      });
 
-      return product;
-  }
-  }
+      // Save the order item to the database
+      await orderItem.save();
+
+      // Return the newly created order item
+      return orderItem;
+    },
+    removeProductFromCart: async (parent, { orderItemId }, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to remove a product from the cart.');
+      }
+
+      // Find the order item to be removed
+      const orderItem = await OrderItem.findById(orderItemId);
+      if (!orderItem) {
+        throw new UserInputError('Order item not found.');
+      }
+
+      // Check if the order item belongs to the user's cart
+      if (!user.cart.equals(orderItem.order)) {
+        throw new AuthenticationError("You can only remove products from your own cart.");
+      }
+
+      // Remove the order item from the database
+      await orderItem.remove();
+
+      // Return the removed order item
+      return orderItem;
+    },
+  },
 };
 
 module.exports = resolvers;
