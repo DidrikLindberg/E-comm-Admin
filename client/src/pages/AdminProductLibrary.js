@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 import { GET_PRODUCTS, ADD_PRODUCT, DELETE_PRODUCT } from "../utils/queries";
 import ProductsList from "../components/ProductsList";
 
@@ -8,27 +9,25 @@ const ProductLibrary = () => {
   const [addProduct] = useMutation(ADD_PRODUCT);
   const [deleteProduct] = useMutation(DELETE_PRODUCT);
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const navigate = useNavigate();
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    console.log(error);
-    return <div>Error fetching products</div>;
-  }
+  useEffect(() => {
+    if (!loading && data) {
+      // Perform any additional logic here if needed
+    }
+  }, [loading, data]);
 
   const handleAddProduct = (event) => {
     event.preventDefault();
 
     const title = event.target.title.value;
-    // const image = event.target.image.value;
+    const image = event.target.image.value;
     const description = event.target.description.value;
 
     addProduct({
       variables: {
         title,
-        // image,
+        image,
         description,
       },
       refetchQueries: [{ query: GET_PRODUCTS }],
@@ -69,13 +68,18 @@ const ProductLibrary = () => {
     }
   };
 
+  if (error) {
+    console.log(error);
+    return <div>Error fetching products</div>;
+  }
+
   return (
     <div>
       <h2>Product Library</h2>
 
       <div className="flex justify-center">
         <ProductsList
-          products={data.products}
+          products={data?.products || []}
           handleDeleteProduct={handleDeleteProduct}
           handleSelectProduct={handleSelectProduct}
         />

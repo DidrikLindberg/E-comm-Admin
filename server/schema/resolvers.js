@@ -4,9 +4,6 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    users: async () => {
-      return User.find();
-    },
     products: async () => {
       return Product.find();
     },
@@ -18,6 +15,13 @@ const resolvers = {
     },
     orderItems: async () => {
       return OrderItem.find();
+    },
+    users: async () => {
+        try {
+          return await User.find();
+        } catch (error) {
+          throw new Error('Failed to fetch users');
+        }
     },
   },
   Mutation: {

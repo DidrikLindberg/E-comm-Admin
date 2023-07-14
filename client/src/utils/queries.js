@@ -1,15 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const ME = gql`
+export const GET_ME = gql`
   query getMe {
-    me {
+    users {
       _id
       username
       email
-      role {
-        _id
-        name
-      }
+      role
     }
   }
 `;
@@ -21,6 +18,7 @@ export const GET_USERS = gql`
       _id
       username
       email
+      role 
     }
   }
 `;
@@ -55,14 +53,6 @@ query GetProducts {
   }
 `;
 
-export const GET_ROLE = gql`
-  query GetRole {
-    role {
-      _id
-      name
-    }
-  }
-`;
 
 
 export const GET_PRODUCT = gql`

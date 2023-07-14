@@ -11,13 +11,14 @@ import {
 import { setContext } from "@apollo/client/link/context";
 // import { ThemeContext, ThemeProvider } from "./utils/ThemeContext";
 import "./style.css";
-// import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
 import Shopping from "./pages/Shopping";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProductLibrary from "./pages/AdminProductLibrary";
 import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
 
 
 // Create an HTTP link to the GraphQL server
@@ -58,12 +59,16 @@ function App() {
     <ApolloProvider client={client}>
       {/* <ThemeProvider value={theme}> */}
         <Router>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
-            <Route path="/shopping" element={<Shopping />} />
+            <Route path="/shopping" element={
+                                      <ProtectedRoute>
+                                        <Shopping />
+                                      </ProtectedRoute>} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProductLibrary />} />
             <Route path="/login" element={<Login />} />

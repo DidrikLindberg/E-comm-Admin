@@ -6,7 +6,11 @@ const typeDefs = gql`
     username: String
     password: String!
     email: String
+    role: String
   }
+
+
+
 
   type Category {
     _id: ID!

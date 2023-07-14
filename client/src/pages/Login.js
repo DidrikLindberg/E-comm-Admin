@@ -27,31 +27,35 @@ const Login = (props) => {
 
     // submit form
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formState);
-
-        try {
-            const { data } = await login({
-                variables: { ...formState },
-            });
-console.log(data)
-console.log("Test1")
-
-            if (data && data.login) {
-                Auth.login(data.login.token);
-                console.log(data.login.token);
-                console.log("test")
-                navigate("/shopping");
-                
-            }
-        } catch (e) {
-            console.error(e);
-        }
-        setFormState({
-            email: "",
-            password: "",
+      event.preventDefault();
+      console.log(formState);
+    
+      try {
+        const { data } = await login({
+          variables: {
+           ...formState
+          }
         });
+    
+        console.log(data);
+        console.log("Test1");
+    
+        if (data && data.login) {
+          Auth.login(data.login.token);
+          console.log(data.login.token);
+          console.log("test");
+          navigate("/shopping");
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    
+      setFormState({
+        email: "",
+        password: ""
+      });
     };
+    
 
 
 

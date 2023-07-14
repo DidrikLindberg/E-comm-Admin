@@ -28,6 +28,11 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
+  getRole() {
+    const profile = this.getProfile();
+    return profile ? profile.role : null;
+  }
+
   login(idToken) {
     localStorage.setItem('id_token', idToken);
     return <Navigate to="/dashboard" />;
@@ -39,4 +44,5 @@ class AuthService {
   }
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new AuthService();
