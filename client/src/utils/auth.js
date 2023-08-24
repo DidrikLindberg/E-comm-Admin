@@ -34,7 +34,9 @@ class AuthService {
   }
 
   login(idToken) {
+    console.log('Storing token in local storage:', idToken);
     localStorage.setItem('id_token', idToken);
+    console.log('Token stored in local storage:', localStorage.getItem('id_token'));
     return <Navigate to="/dashboard" />;
   }
 

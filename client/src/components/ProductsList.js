@@ -4,7 +4,7 @@ import { GET_PRODUCTS } from '../utils/queries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-import Authservice from '../utils/auth';
+
 
 const ProductsList = () => {
   // const userRole = Authservice.getUser.userRole();

@@ -21,6 +21,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 
 
+
 // Create an HTTP link to the GraphQL server
 // Create an HTTP link to the GraphQL server
 const httpLink = createHttpLink({
@@ -65,10 +66,7 @@ function App() {
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
-            <Route path="/shopping" element={
-                                      <ProtectedRoute>
-                                        <Shopping />
-                                      </ProtectedRoute>} />
+            <Route path="/shopping" element={<Shopping />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProductLibrary />} />
             <Route path="/login" element={<Login />} />

@@ -5,9 +5,9 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   const isLoggedIn = AuthService.loggedIn();
-  const isAdmin = AuthService.getRole() === 'admin';
+  // const isAdmin = AuthService.getRole() === 'admin';
 
-  return isLoggedIn && isAdmin ? (
+  return isLoggedIn ? (
     children
   ) : (
     <Navigate to="/login" state={{ from: location }} />
