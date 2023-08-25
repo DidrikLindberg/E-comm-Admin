@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import productimg from '../assets/images/PartyTentBlack.png';
 import BlackCanopy from '../assets/images/BlackCanopy1.jpg';
 import WhitePartyTent from '../assets/images/WhitePartyTent.jpg';
-import BannerImg from '../assets/images/Banner.jpg';
+import BannerImg from '../assets/images/hero-dog.png';
 
 const Home = () => {
   return (
@@ -12,12 +12,13 @@ const Home = () => {
         <div className="container mx-auto py-16">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-4">Prepare For Your Next Fesival with Us!</h1>
-              <p className="text-lg text-gray-600 mb-8">Shop our collection of Party Tents, Canopies, and other camping gear you might need.</p>
-              <Link to="/shopping" className="btn btn-primary">Shop Now</Link>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-4 text-purple-600 tracking-wide">Welcome to <span className="text-pink-500">Paws & Play</span> – Your Canine Companion's Ultimate Paradise!</h1>
+<p className="text-lg text-gray-600 mb-8">Join us in <span className="text-pink-500">celebrating the wonderful world of dogs</span> – where each product is designed to make tails wag, hearts melt, and adventures unforgettable. Let the shopping begin, and let the happiness flow! 🐶🛍️</p>
+<Link to="/shopping" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">Shop Now</Link>
+
             </div>
             <div className="lg:w-1/2">
-              <img src= {BannerImg} alt="Banner" className="w-full rounded-lg shadow-lg" />
+              <img src= {BannerImg} alt="Banner" className="w-full" />
             </div>
           </div>
         </div>
