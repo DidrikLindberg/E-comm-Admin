@@ -41,7 +41,7 @@ const seedData = async () => {
         category: categories[0]._id,
         title: 'Interactive Chew Toy',
         description: 'Durable toy for interactive play and chewing.',
-        image: 'chew-toy.jpg',
+        image: '../assets/images/Interactive Chew Toy.jpg',
         createdBy: adminUser._id,
       },
       {
@@ -139,7 +139,7 @@ const seedData = async () => {
         category: categories[4]._id,
         title: 'Dog Bowtie Collar',
         description: 'Stylish collar with a detachable bowtie accessory.',
-        image: 'dog-bowtie-collar.jpg',
+        image: '../assets/images/Dog Bowtie Collar.jpg',
         createdBy: adminUser._id,
       },
     ];
