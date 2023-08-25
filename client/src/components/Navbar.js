@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthService from '../utils/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
   const [showCategories, setShowCategories] = useState(false);
@@ -17,13 +20,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light py-3">
-      <div className="container-fluid">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center">
-            <Link to="/" className="navbar-brand">Your Logo</Link>
-          </div>
-
+    <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 bg-gray-100">
+    <div className="container-fluid">
+      <div className="flex items-center justify-between w-full">
+        <div className="flex items-center">
+          <Link to="/" className="navbar-brand">
+          <FontAwesomeIcon icon={faPaw} className="text-6xl pl-6 text-pink-500" />
+          </Link>
+        </div>
           <div className="flex justify-center">
             <input
               type="text"
@@ -34,62 +38,17 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center">
-            {!isLoggedIn && (
-              <Link to="/login" className="text-sm font-semibold leading-6">
-                Log in <span aria-hidden="true">&rarr;</span>
-              </Link>
-            )}
-            {isLoggedIn && (
-              <button
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 "
-                onClick={handleLogout}
-              >
-                Log out
-              </button>
-            )}
+            {/* Shopping cart icon linking to shopping cart page */}
+            <Link to="/shoppingcart" className="ml-4 text-xl text-gray-700">
+            <FontAwesomeIcon icon={faShoppingCart} className="text-4xl pl-6 text-blue-800" />
+            </Link>
           </div>
-        </div>
 
-        <button
-          onClick={handleToggleCategories}
-          className="lg:hidden inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
 
-        <div className={`lg:hidden ${showCategories ? 'block' : 'hidden'}`}>
-          <ul>
-            {/* Categories list here */}
-            <li>
-              <Link to="/category/toys" className="block px-4 py-2 text-gray-800">Toys</Link>
-            </li>
-            <li>
-              <Link to="/category/food" className="block px-4 py-2 text-gray-800">Food</Link>
-            </li>
-            <li>
-              <Link to="/category/grooming" className="block px-4 py-2 text-gray-800">Grooming</Link>
-            </li>
-            {/* Add more categories */}
-          </ul>
-        </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end">
-          {/* Remaining code for login/logout */}
-        </div>
+
       </div>
+    </div>
     </nav>
   );
 }
