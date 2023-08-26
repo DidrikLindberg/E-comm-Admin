@@ -43,6 +43,7 @@ const typeDefs = gql`
     users: [User!]!
     categories: [Category!]!
     products: [Product!]!
+    product(id: ID!): Product
     orders: [Order!]!
     orderItems: [OrderItem!]!
     
