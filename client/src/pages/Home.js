@@ -27,7 +27,10 @@ const Home = () => {
 
       <section className="py-16 bg-gray-100">
   <div className="container mx-auto px-16">
-    <h2 className="text-3xl lg:text-4xl font-bold mb-8">Featured Products</h2>
+    <div className="text-center mb-8">
+      <h2 className="text-4xl lg:text-5xl font-bold text-blue-600">Featured Products</h2>
+      <div className="w-20 h-1 bg-blue-600 mx-auto mt-2"></div>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <div className="relative h-61">
@@ -84,7 +87,7 @@ const Home = () => {
 
 <section className="py-16 px-16">
   <div className="container mx-auto">
-    <h2 className="text-3xl lg:text-4xl font-bold mb-8">Customer Reviews</h2>
+    <h2 className="text-3xl lg:text-2xl font-bold mb-8">What Our Customers Think About Us</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div className="bg-white rounded-lg shadow-md overflow-hidden p-6">
         <div className="flex items-center mb-4">
@@ -158,8 +161,16 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden relative">
-        <div className="absolute inset-0 z-10 opacity-0 bg-gray-700"></div>
+      <div className="bg-white rounded-lg shadow-md overflow-hidden relative p-6">
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-gray-100 to-gray-700/70 flex items-center justify-center transform transition-transform hover:scale-105 cursor-pointer">
+        <p className="text-white text-lg font-thin relative group">
+          See More Reviews
+          <span className="ml-2">
+             <i className="fas fa-arrow-right text-gray-300"></i>
+           </span>
+        </p>
+        
+      </div>
         <div className="flex items-center mb-4">
           <img
             src="https://randomuser.me/api/portraits/men/3.jpg"
