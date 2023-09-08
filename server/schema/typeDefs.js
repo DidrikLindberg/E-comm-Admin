@@ -25,6 +25,7 @@ const typeDefs = gql`
     image: String
     headline: String
     createdBy: User
+    price: Float
   }
 
   type Order {

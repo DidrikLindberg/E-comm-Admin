@@ -46,6 +46,7 @@ const seedData = async () => {
         description: 'Durable toy for interactive play and chewing.',
         image: s3BaseUrl + 'interactive-chew-toy.png',
         createdBy: adminUser._id,
+        price: 12.99 // Suggested price in dollars
       },
       {
         category: categories[1]._id,
@@ -53,13 +54,15 @@ const seedData = async () => {
         description: 'Delicious treats made with natural ingredients.',
         image: s3BaseUrl + 'grain-free-treat.jpg',
         createdBy: adminUser._id,
+        price: 9.99 // Suggested price in dollars
       },
       {
         category: categories[2]._id,
         title: 'Self-Cleaning Slicker Brush',
         description: 'Gentle brush that removes tangles and loose fur.',
-        image: s3BaseUrl +  'self-cleaning-brush.jpg',
+        image: s3BaseUrl + 'self-cleaning-brush.jpg',
         createdBy: adminUser._id,
+        price: 14.99 // Suggested price in dollars
       },
       {
         category: categories[3]._id,
@@ -67,6 +70,7 @@ const seedData = async () => {
         description: 'Premium bed for comfort and joint support.',
         image: s3BaseUrl + 'orthopedic-dog-bed.jpg',
         createdBy: adminUser._id,
+        price: 49.99 // Suggested price in dollars
       },
       {
         category: categories[4]._id,
@@ -74,6 +78,7 @@ const seedData = async () => {
         description: 'Protective raincoat for walks in wet weather.',
         image: s3BaseUrl + 'Waterproof Dog Raincoat.jpg',
         createdBy: adminUser._id,
+        price: 19.99 // Suggested price in dollars
       },
       {
         category: categories[0]._id,
@@ -81,6 +86,7 @@ const seedData = async () => {
         description: 'Colorful balls for a game of fetch in the park.',
         image: s3BaseUrl + 'Fetch Ball Set.jpg',
         createdBy: adminUser._id,
+        price: 7.99 // Suggested price in dollars
       },
       {
         category: categories[1]._id,
@@ -88,41 +94,47 @@ const seedData = async () => {
         description: 'Wholesome biscuits made from real ingredients.',
         image: s3BaseUrl + 'Natural Dog Biscuits.jpeg',
         createdBy: adminUser._id,
+        price: 11.99 // Suggested price in dollars
       },
       {
         category: categories[2]._id,
         title: 'Dog Shampoo',
-        description: 'Gentle shampoo that keeps your dogs coat clean and shiny.',
+        description: 'Gentle shampoo that keeps your dog\'s coat clean and shiny.',
         image: s3BaseUrl + 'Dog Shampoo.jpeg',
         createdBy: adminUser._id,
+        price: 8.99 // Suggested price in dollars
       },
       {
         category: categories[3]._id,
         title: 'Cozy Dog Blanket',
         description: 'Soft blanket to keep your furry friend warm and snug.',
-        image: s3BaseUrl +  'Cozy Dog Blanket.png',
+        image: s3BaseUrl + 'Cozy Dog Blanket.png',
         createdBy: adminUser._id,
+        price: 16.99 // Suggested price in dollars
       },
       {
         category: categories[4]._id,
         title: 'Dog Sunglasses',
-        description: 'Stylish sunglasses to protect your dogs eyes from the sun.',
-        image: s3BaseUrl +  'Dog Sunglasses.png',
+        description: 'Stylish sunglasses to protect your dog\'s eyes from the sun.',
+        image: s3BaseUrl + 'Dog Sunglasses.png',
         createdBy: adminUser._id,
+        price: 14.99 // Suggested price in dollars
       },
       {
         category: categories[0]._id,
         title: 'Squeaky Plush Toy Set',
         description: 'Plush toys with squeakers for hours of fun.',
-        image: s3BaseUrl +  'Squeaky Plush Toy Set.jpg',
+        image: s3BaseUrl + 'Squeaky Plush Toy Set.jpg',
         createdBy: adminUser._id,
+        price: 9.99 // Suggested price in dollars
       },
       {
         category: categories[1]._id,
         title: 'Organic Dog Food',
         description: 'Organic and nutritious dog food for a balanced diet.',
-        image: s3BaseUrl +  'Organic Dog Food.png',
+        image: s3BaseUrl + 'Organic Dog Food.png',
         createdBy: adminUser._id,
+        price: 29.99 // Suggested price in dollars
       },
       {
         category: categories[2]._id,
@@ -130,13 +142,15 @@ const seedData = async () => {
         description: 'Safe clippers for trimming your dog\'s nails.',
         image: s3BaseUrl + 'Dog Nail Clippers.png',
         createdBy: adminUser._id,
+        price: 6.99 // Suggested price in dollars
       },
       {
         category: categories[3]._id,
         title: 'Elevated Dog Cot',
         description: 'Elevated cot for comfortable rest indoors or outdoors.',
-        image: s3BaseUrl +  'Elevated Dog Cot.jpg',
+        image: s3BaseUrl + 'Elevated Dog Cot.jpg',
         createdBy: adminUser._id,
+        price: 39.99 // Suggested price in dollars
       },
       {
         category: categories[4]._id,
@@ -144,7 +158,8 @@ const seedData = async () => {
         description: 'Stylish collar with a detachable bowtie accessory.',
         image: s3BaseUrl + 'Dog Bowtie Collar.jpg',
         createdBy: adminUser._id,
-      },
+        price: 8.99 //
+      },      
     ];
 
     // Insert the data into the database

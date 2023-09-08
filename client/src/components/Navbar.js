@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import AuthService from '../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +8,18 @@ const categories = ['Toys', 'Accessories', 'Apparel', 'Grooming'];
 export default function Navbar() {
   const [showCategories, setShowCategories] = useState(false);
   const navigate = useNavigate();
+  const [cartItemCount, setCartItemCount] = useState(0);
+
+  const getCartItemCount = () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    setCartItemCount(totalCount);
+  };
+
+  useEffect(() => {
+    // Update cart item count whenever the component mounts or cart changes
+    getCartItemCount();
+  }, []);
 
   const handleToggleCategories = () => {
     setShowCategories(!showCategories);
@@ -64,6 +75,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/shoppingcart" className="text-gray-600">
               <FontAwesomeIcon icon={faShoppingCart} className="text-2xl text-blue-800" />
+              <div className="cart-badge">{cartItemCount}</div>
             </Link>
           </div>
         </div>

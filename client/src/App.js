@@ -19,6 +19,9 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminProductLibrary from "./pages/AdminProductLibrary";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import Product from "./pages/Product";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import ShoppingCart from "./pages/ShoppingCart";
 
 
 
@@ -61,17 +64,21 @@ function App() {
       {/* <ThemeProvider value={theme}> */}
         <Router>
           <Navbar />
+          <ShoppingCartProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
             {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
             <Route path="/shopping" element={<Shopping />} />
+            <Route path="/product/:id" element={<Product />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProductLibrary />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/shoppingcart" element={<ShoppingCart />} />
 
           </Routes>
+          </ShoppingCartProvider>
         </Router>
       {/* </ThemeProvider> */}
     </ApolloProvider>

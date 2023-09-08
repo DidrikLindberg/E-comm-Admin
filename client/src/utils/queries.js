@@ -58,14 +58,16 @@ query GetProducts {
 export const GET_PRODUCT = gql`
   query GetProduct($productId: ID!) {
     product(id: $productId) {
-      idcategory
+      _id
       title
       headline
       description
       image
+      price
     }
   }
 `;
+
 
 
 export const ADD_TO_CART = gql`

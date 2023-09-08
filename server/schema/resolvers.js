@@ -26,8 +26,8 @@ const resolvers = {
     product: async (_, { id }) => {
       try {
         const product = await Product.findById(id)
-          .populate('category')
-          .populate('createdBy');
+          // .populate('category')
+          // .populate('createdBy');
         return product;
       } catch (error) {
         throw new Error('Error fetching product');

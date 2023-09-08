@@ -3,9 +3,8 @@ import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../utils/queries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import productimg from '../assets/images/Organic Dog Food.png';
-import BlackCanopy from '../assets/images/Dog Bowtie Collar.jpg';
-import WhitePartyTent from '../assets/images/Elevated Dog Cot.jpg';
+import { Link } from 'react-router-dom';
+
 
 const CategoriesSidebar = () => {
   // Simulated categories, replace with actual categories
@@ -70,10 +69,12 @@ const ProductsList = () => {
           <CategoriesSidebar />
         </div>
         <div className="col-span-1 md:col-span-3 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+  {products.map((product) => (
+    <Link to={`/product/${product._id}`} key={product._id} className="product-link">
+      <ProductCard key={product._id} product={product} />
+    </Link>
+  ))}
+</div>
       </div>
     </div>
   );

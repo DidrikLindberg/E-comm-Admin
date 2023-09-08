@@ -26,6 +26,10 @@ const productSchema = new mongoose.Schema({
     ref: 'User',
     // required: true,
   },
+  price: {
+    type: Number,
+    // required: true,
+  },
 });
 
 const Product = mongoose.model('Product', productSchema);
