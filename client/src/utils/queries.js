@@ -75,7 +75,7 @@ export const ADD_TO_CART = gql`
     addToCart(productId: $productId, quantity: $quantity) {
       id
       product {
-        id
+        _id
         name
         price
         image
@@ -90,7 +90,7 @@ export const REMOVE_FROM_CART = gql`
     removeFromCart(cartItemId: $cartItemId) {
       id
       product {
-        id
+        _id
         name
         price
         image
@@ -105,7 +105,7 @@ export const UPDATE_CART_ITEM_QUANTITY = gql`
     updateCartItemQuantity(cartItemId: $cartItemId, quantity: $quantity) {
       id
       product {
-        id
+        _id
         name
         price
         image

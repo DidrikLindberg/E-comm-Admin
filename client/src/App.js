@@ -10,7 +10,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 // import { ThemeContext, ThemeProvider } from "./utils/ThemeContext";
-import "./style.css";
+import "./App.css";
+// import "./style.css"
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
@@ -58,13 +59,15 @@ const client = new ApolloClient({
 
 
 function App() {
+  console.log('App component rendering');
   // const { theme } = useContext(ThemeContext);
   return (
     <ApolloProvider client={client}>
       {/* <ThemeProvider value={theme}> */}
         <Router>
-          <Navbar />
           <ShoppingCartProvider>
+          <Navbar />
+
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/login" element={<Login />} /> */}

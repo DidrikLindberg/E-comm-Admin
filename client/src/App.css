@@ -42,3 +42,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.5s ease-in-out; 
+}
+
+.cart-sidebar.show {
+  right: 0; 
+}
+
+
+/* CSS for CartSidebar */

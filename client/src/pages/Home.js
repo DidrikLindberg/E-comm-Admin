@@ -7,6 +7,7 @@ import BannerImg from '../assets/images/hero-dog.png';
 import aboutus from '../assets/images/about us.jpg';
 
 const Home = () => {
+  console.log("Home Page");
   return (
     <div>
       <section className="bg-gray-100">

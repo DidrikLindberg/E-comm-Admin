@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { useShoppingCart } from '../context/ShoppingCartContext'; // Import the useShoppingCart hook
+import CartSidebar from './CartSidebar';
 
 const categories = ['Toys', 'Accessories', 'Apparel', 'Grooming'];
 
 export default function Navbar() {
   const [showCategories, setShowCategories] = useState(false);
-  const navigate = useNavigate();
-  const [cartItemCount, setCartItemCount] = useState(0);
+  const [showCartSidebar, setShowCartSidebar] = useState(false); // State for cart sidebar visibility
 
-  const getCartItemCount = () => {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-    setCartItemCount(totalCount);
-  };
-
-  useEffect(() => {
-    // Update cart item count whenever the component mounts or cart changes
-    getCartItemCount();
-  }, []);
+  const { cart } = useShoppingCart();
 
   const handleToggleCategories = () => {
     setShowCategories(!showCategories);
@@ -28,6 +20,17 @@ export default function Navbar() {
   const handleHideCategories = () => {
     setShowCategories(false);
   };
+
+  const toggleCartSidebar = () => {
+    setShowCartSidebar(!showCartSidebar); // Toggle cart sidebar visibility
+  };
+
+  const handleHideCartSidebar = () => {
+    setShowCartSidebar(false);
+  };
+
+  // Calculate the cart item count from the cart data
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 bg-gray-100 relative">
@@ -73,11 +76,14 @@ export default function Navbar() {
             />
           </div>
           <div className="flex items-center">
-            <Link to="/shoppingcart" className="text-gray-600">
+            {/* Remove Link component and add onClick to toggle cart sidebar */}
+            <div className="text-gray-600 cursor-pointer" onClick={toggleCartSidebar}>
               <FontAwesomeIcon icon={faShoppingCart} className="text-2xl text-blue-800" />
               <div className="cart-badge">{cartItemCount}</div>
-            </Link>
+            </div>
           </div>
+          {/* Render cart sidebar */}
+          {showCartSidebar && <CartSidebar cart={cart} onClose={handleHideCartSidebar} />}
         </div>
       </div>
     </nav>

@@ -13,39 +13,42 @@ const Product = () => {
 
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useShoppingCart();
+  console.log('Product component rendering'); // Debug statement
 
   const handleAddToCart = () => {
     if (loading || error) {
       return;
     }
-  
+
     const product = data.product;
-  
+
     // Logging for debugging
     console.log('Product:', product);
-    
+
     // Make sure you pass an object with the correct structure
     const cartItem = {
       product: {
         id: product._id,
         title: product.title,
-        // Add other properties if needed
+        price: product.price,
+        image: product.image,
+        
       },
-      quantity,
+      quantity: quantity,  // Use the current quantity
     };
-  
+
     // Logging for debugging
     console.log('CartItem:', cartItem);
-  
+
     // Use the addToCart function from the shopping cart context
     addToCart(cartItem);
-  
+    console.log('Added to cart', cartItem); // Debug statement
+
     // Display a notification when the product is added to the cart
     toast.success(`${product.title} added to cart`, {
       position: 'bottom-right',
     });
   };
-  
 
   if (loading) {
     return <p>Loading...</p>;
@@ -80,7 +83,7 @@ const Product = () => {
           <select
             className="border rounded-md px-2 py-2 w-16 text-center pr-4"
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e) => setQuantity(Number(e.target.value))} // Parse to number
           >
             {Array.from({ length: 10 }, (_, i) => i + 1).map((value) => (
               <option key={value} value={value}>
