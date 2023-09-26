@@ -12,7 +12,7 @@ import { setContext } from "@apollo/client/link/context";
 // import { ThemeContext, ThemeProvider } from "./utils/ThemeContext";
 import "./App.css";
 // import "./style.css"
-import ProtectedRoute from "./components/ProtectedRoute";
+// import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
 import Shopping from "./pages/Shopping";
@@ -40,7 +40,7 @@ const authLink = setContext((_, { headers }) => {
   console.log(token);
   // Return the headers to the context so httpLink can read them
   return {
-    console: console.log(token),
+    
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",

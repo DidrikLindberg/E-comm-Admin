@@ -33,9 +33,9 @@ export default function Navbar() {
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 bg-gray-100 relative">
-      <div className="container">
-        <div className="flex items-center justify-between w-full">
+<nav className="navbar navbar-expand-lg navbar-light bg-gray-900 py-3" style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
+        <div className="container">
+        <div className="flex items-center justify-between w-full ml-8">
           <Link to="/" className="navbar-brand">
             <FontAwesomeIcon icon={faPaw} className="text-4xl text-pink-500" />
           </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
               onMouseEnter={handleToggleCategories}
               onMouseLeave={handleHideCategories}
             >
-              <button className="text-gray-600 group-hover:text-blue-500">
+              <button className="text-white group-hover:text-blue-500">
                 Categories
               </button>
               {showCategories && (
@@ -61,10 +61,10 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/whatsnew" className="text-gray-600 hover:text-blue-500">
+            <Link to="/whatsnew" className="text-white hover:text-blue-500">
               What's New
             </Link>
-            <Link to="/deals" className="text-gray-600 hover:text-blue-500">
+            <Link to="/deals" className="text-white hover:text-blue-500">
               Deals
             </Link>
           </div>
@@ -77,8 +77,8 @@ export default function Navbar() {
           </div>
           <div className="flex items-center">
             {/* Remove Link component and add onClick to toggle cart sidebar */}
-            <div className="text-gray-600 cursor-pointer" onClick={toggleCartSidebar}>
-              <FontAwesomeIcon icon={faShoppingCart} className="text-2xl text-blue-800" />
+            <div className="text-white cursor-pointer" onClick={toggleCartSidebar}>
+              <FontAwesomeIcon icon={faShoppingCart} className="text-2xl text-white" />
               <div className="cart-badge">{cartItemCount}</div>
             </div>
           </div>

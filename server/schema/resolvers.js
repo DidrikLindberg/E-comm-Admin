@@ -41,6 +41,32 @@ const resolvers = {
     addUser: async (parent, { username, email, password }) => {
       // Add user logic
     },
+     // Add product mutation
+     addProduct: async (parent, { title, image, description, categoryId }) => {
+      try {
+        // Create a new product with the provided data
+        const product = new Product({
+          category,
+          title,
+          image,
+          description,
+          headline,
+          createadby,
+          price,
+        });
+
+            // Save the product to the database
+            await product.save();
+
+            return product;
+          } catch (error) {
+            // Handle any errors that occur during product creation
+            throw new UserInputError('Failed to create a product.', {
+              errors: error.message,
+            });
+          }
+        },
+
     addProductToCart: async (parent, { productId, quantity }, { user }) => {
       if (!user) {
         throw new AuthenticationError('You must be logged in to add a product to the cart.');

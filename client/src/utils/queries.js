@@ -35,14 +35,13 @@ export const GET_PRODUCTS = gql`
 query GetProducts {
     products {    
     description
+    description2
     headline
     _id
     image
     title
-    category {
-        _id
-        name
-      }
+    price
+
       createdBy {
         email
         _id
@@ -62,6 +61,7 @@ export const GET_PRODUCT = gql`
       title
       headline
       description
+      description2
       image
       price
     }

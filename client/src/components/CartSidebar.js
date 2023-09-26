@@ -18,11 +18,19 @@ const CartSidebar = ({ cart, onClose }) => {
                 key={cartItem.product.id}
                 className="border p-4 rounded-lg shadow-md"
               >
+                <img
+                  src={cartItem.product.image}
+                  alt={cartItem.product.title}
+                  className="w-12 h-12 object-cover rounded-md"
+                />
                 <h3 className="text-lg font-semibold">
                   {cartItem.product.title}
                 </h3>
                 <p className="mt-2 text-gray-700">
-                  Price: ${(cartItem.product.price || 0) * cartItem.quantity}
+                  Quantity: {cartItem.quantity}
+                </p>
+                <p className="mt-2 text-gray-700">
+                  Total: ${(cartItem.product.price || 0) * cartItem.quantity}
                 </p>
                 {/* Add more details as needed */}
               </div>

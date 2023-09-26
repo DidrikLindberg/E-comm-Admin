@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <section className="bg-gray-100">
-        <div className="container mx-auto py-16 pl-10">
+        <div className="container mx-auto py-16 pl-10 mt-3">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 pl-6">
             <h1 className="text-4xl lg:text-6xl font-bold mb-4 text-purple-600 tracking-wide">Welcome to <span className="text-pink-500">Paws & Play</span> – Your Canine Companion's Ultimate Paradise!</h1>
@@ -358,22 +358,22 @@ const Home = () => {
         <h3 className="text-xl font-semibold mb-4">Links</h3>
         <ul className="list-none">
           <li className="mb-2">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" className="text-gray-300 hover:text-white transition-colors">
               Home
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/shopping" className="text-gray-300 hover:text-white transition-colors">
               Shop
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" className="text-gray-300 hover:text-white transition-colors">
               About Us
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" className="text-gray-300 hover:text-white transition-colors">
               Contact Us
             </a>
           </li>

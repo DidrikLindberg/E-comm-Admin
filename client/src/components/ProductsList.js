@@ -1,47 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../utils/queries';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-
-const CategoriesSidebar = () => {
-  // Simulated categories, replace with actual categories
-  const categories = ['Toys', 'Accessories', 'Apparel', 'Grooming'];
-
-  return (
-    <div className="bg-white p-4 rounded shadow-md mb-6">
-      <h3 className="text-xl font-semibold mb-3">Categories</h3>
-      <ul className="space-y-2">
-        {categories.map((category) => (
-          <li
-            key={category}
-            className="text-gray-600 hover:text-blue-500 cursor-pointer transition-colors"
-          >
-            {category}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 const ProductCard = ({ product }) => (
-  <div className="bg-white p-6 shadow-md rounded-lg flex flex-col justify-between transition-transform hover:scale-105">
-    <div>
-      <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4" />
-      <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-      <p className="text-gray-600 mb-4">{product.description}</p>
+  <Link to={`/product/${product._id}`} className="block no-underline">
+    <div className="bg-white rounded-lg overflow-hidden w-80 h-106"> {/* Adjust width and height here */}
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-64 object-cover cursor-pointer"
+      />
+      <div className="p-4"> {/* No fixed height */}
+        <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
+        <p className="text-gray-700 mb-4">{product.description}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-blue-600 font-semibold text-lg">${product.price}</span>
+        </div>
+      </div>
     </div>
-    <div className="flex items-center justify-between">
-      <span className="text-gray-700 font-semibold">${product.price}</span>
-      <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-        <FontAwesomeIcon icon={faCartPlus} className="mr-2" />
-        Add to Cart
-      </button>
-    </div>
-  </div>
+  </Link>
 );
 
 const ProductsList = () => {
@@ -63,19 +41,12 @@ const ProductsList = () => {
   }
 
   return (
-    <div className="container mx-auto px-8 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="col-span-1 md:col-span-1 lg:col-span-1">
-          <CategoriesSidebar />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ml-16">
+      {products.map((product) => (
+        <div key={product._id} className="mb-4"> {/* Added margin-bottom */}
+          <ProductCard product={product} />
         </div>
-        <div className="col-span-1 md:col-span-3 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {products.map((product) => (
-    <Link to={`/product/${product._id}`} key={product._id} className="product-link">
-      <ProductCard key={product._id} product={product} />
-    </Link>
-  ))}
-</div>
-      </div>
+      ))}
     </div>
   );
 };
