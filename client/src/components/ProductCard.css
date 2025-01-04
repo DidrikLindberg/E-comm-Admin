@@ -1,0 +1,97 @@
+.product-card {
+    width: 100%;
+    max-width: 350px; /* Set a max width for the card */
+    background-color: #ffffff; /* Clean white background */
+    border: 1px solid #e5e7eb; /* Light gray border */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    overflow: hidden; /* Prevent overflow of child elements */
+    height: 400px; /* Fixed height for uniformity */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Lift effect on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.product-image-container {
+    overflow: hidden; /* Prevent overflow of image on hover */
+}
+
+.product-image {
+    width: 100%; /* Full width image */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.product-image-container:hover .product-image {
+    transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.product-details {
+    padding: 1rem; /* Padding around the details */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    flex-grow: 1; /* Allow this section to grow and take available space */
+}
+
+.product-title {
+    font-size: 1.25rem; /* Responsive font size for title */
+    font-weight: 600; /* Semi-bold title */
+    color: #1f2937; /* Dark gray color for text */
+    margin: 0; /* Remove default margin */
+}
+
+.rating {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-top: 0.625rem; /* Space above the rating */
+    margin-bottom: 1.25rem; /* Space below the rating */
+}
+
+.star {
+    width: 1rem; /* Fixed width for stars */
+    height: 1rem; /* Fixed height for stars */
+    color: #fbbf24; /* Yellow color for filled stars */
+}
+
+.rating-value {
+    background-color: #e0f2fe; /* Light blue background */
+    color: #1e40af; /* Dark blue text */
+    font-size: 0.75rem; /* Small font size */
+    font-weight: 600; /* Semi-bold text */
+    padding: 0.25rem 0.5rem; /* Padding for the rating value */
+    border-radius: 0.375rem; /* Rounded corners */
+    margin-left: 0.5rem; /* Space between stars and rating value */
+}
+
+.product-footer {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between price and button */
+    align-items: center; /* Center items vertically */
+    padding: 1rem; /* Padding for the footer */
+    background-color: #ffffff; /* Light gray background */
+}
+
+.product-price {
+    font-size: 1.875rem; /* Large font size for price */
+    font-weight: 700; /* Bold text */
+    color: #1f2937; /* Dark gray color for price */
+}
+
+.add-to-cart {
+    background-color: #2e6aca; /* Blue background */
+    color: white; /* White text */
+    padding: 0.5rem 1rem; /* Padding for the button */
+    border-radius: 1.5rem; /* Rounded corners */
+    font-weight: 500; /* Medium font weight */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.add-to-cart:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}

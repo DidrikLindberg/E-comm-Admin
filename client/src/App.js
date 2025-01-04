@@ -11,18 +11,30 @@ import {
 import { setContext } from "@apollo/client/link/context";
 // import { ThemeContext, ThemeProvider } from "./utils/ThemeContext";
 import "./App.css";
-// import "./style.css"
+import "./style.css"
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 // import Products from "./components/ProductsList";
-import Shopping from "./pages/Shopping";
+import Shopping from "./pages/Shopping/Shopping";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProductLibrary from "./pages/AdminProductLibrary";
 import Login from "./pages/Login";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Product from "./pages/Product";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import ShoppingCart from "./pages/ShoppingCart";
+import HomePage from "./pages/Home";
+// import Register from "./pages/Register";
+import Account from "./pages/Account";
+import Listing from "./pages/Listing";
+import GiftPage from "./pages/GiftPage";
+import GiftPageElement from "./pages/GiftPageElement";
+import Gift from "./pages/Gift";
+import PersonAccount from "./pages/PersonAccount";
+import User from "./pages/User";
+import AccountList from "./pages/AccountList";
+import LocationLandingPage from "./components/LocationLandingPage";
+
 
 
 
@@ -66,19 +78,27 @@ function App() {
       {/* <ThemeProvider value={theme}> */}
         <Router>
           <ShoppingCartProvider>
-          <Navbar />
+          {/* <Navbar /> */}
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/signup" element={<Signup />} /> */}
-            {/* <ProtectedRoute path="/profile" element={<Profile />} /> */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<Login />} />
+            {/* <Route path="/register" element={<Register />} /> */}
+            <Route path="/account" element={<Account />} />
+            <Route path="/account:id" element={<Account />} />
+            <Route path="/accountlist" element={<AccountList />} />
+            <Route path="/listing" element={<Listing />} />
+            <Route path="/gift-page" element={<GiftPage />} />
+            <Route path="/gift-page-element" element={<GiftPageElement />} />
+            <Route path="/gift" element={<Gift />} />
+            <Route path="/location/:zipCode" element={<LocationLandingPage />} />
+            <Route path="/person-account" element={<PersonAccount />} />
+            <Route path="/user" element={<User />} />
             <Route path="/shopping" element={<Shopping />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<AdminProductLibrary />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/shoppingcart" element={<ShoppingCart />} />
+            {/* <Route path="/shoppingcart" element={<ShoppingCart />} /> */}
 
           </Routes>
           </ShoppingCartProvider>

@@ -1,0 +1,33 @@
+.value-proposition {
+    background-color: #EDE6D8 !important; /* Light beige background */
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .value-proposition h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4A5568; /* Dark gray color */
+    margin-bottom: 10px;
+  }
+  
+  .value-proposition p {
+    font-size: 1rem;
+    color: #718096; /* Light gray color */
+    margin-bottom: 20px;
+  }
+  
+  .value-proposition img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0%;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .value-proposition {
+      padding: 20px;
+    }
+  }

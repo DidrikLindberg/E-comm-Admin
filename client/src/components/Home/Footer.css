@@ -1,0 +1,17 @@
+/* Footer.css */
+.footer {
+    background-color: #282c34; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 20px; /* Padding for footer */
+}
+
+.footer a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Margin for spacing */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

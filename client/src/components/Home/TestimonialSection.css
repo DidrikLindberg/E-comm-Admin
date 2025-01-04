@@ -1,0 +1,98 @@
+.testimonial-section {
+  background-color: #e0f2f1; /* Soft pastel green background */
+  padding: 0rem 0; /* Padding for the top and bottom of the section */
+  margin-bottom: 0; /* Ensure no margin at the bottom */
+}
+
+.testimonial-image {
+  flex: 1; /* Allow images to take equal space */
+  position: relative; /* Position for clipping */
+  margin: 0; /* Remove any margin */
+}
+
+.left-image img {
+  clip-path: path("M0 0 L100% 0 L100% 100% Q0 100% 0 0"); /* Bottom-left rounded clipping */
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0 50% 0 0; /* Additional rounding for aesthetics */
+  margin-bottom: 0; /* Ensure no margin below the image */
+}
+
+.right-image img {
+  clip-path: path("M0 0 L100% 0 Q100% 0 100% 100%"); /* Top-right rounded clipping */
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50% 0 0 0; /* Additional rounding for aesthetics */
+  margin-bottom: 0; /* Ensure no margin below the image */
+}
+
+.testimonial-text {
+  flex: 2; /* Allow text to take more space */
+  padding: 1rem; /* Padding around text */
+  display: flex; /* Flexbox for vertical centering */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center align vertically */
+}
+
+.testimonial-title {
+  font-size: 2rem; /* Larger font size for title */
+  font-weight: bold; /* Bold title */
+}
+
+.testimonial-quote {
+  font-size: 1.5rem; /* Larger font size for quote */
+  line-height: 1.5; /* Proper line height */
+}
+
+.highlight {
+  font-weight: bold; /* Emphasize key part of the testimonial */
+}
+
+.testimonial-author {
+  font-size: 0.875rem; /* Smaller font size for attribution */
+  color: #6b7280; /* Gray color for attribution */
+}
+
+.pagination-dots {
+  margin-top: 1rem; /* Space above dots */
+}
+
+.dot {
+  height: 10px; /* Height of dots */
+  width: 10px; /* Width of dots */
+  margin: 0 5px; /* Space between dots */
+  background-color: #4A5568; /* Color of dots */
+  border-radius: 50%; /* Make dots circular */
+  display: inline-block; /* Inline display */
+}
+
+.dot.active {
+  background-color: #2D3748; /* Darker color for active dot */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-section {
+      flex-direction: column; /* Stack images and text vertically */
+  }
+
+  .testimonial-image {
+      margin-bottom: 0; /* Ensure no margin below images */
+  }
+
+  .testimonial-text {
+      text-align: center; /* Center-align the text on smaller screens */
+  }
+
+  .testimonial-title {
+      font-size: 1.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .testimonial-quote {
+      font-size: 1.25rem; /* Adjust quote size for smaller screens */
+  }
+
+  .testimonial-author {
+      font-size: 0.75rem; /* Adjust author size for smaller screens */
+  }
+}

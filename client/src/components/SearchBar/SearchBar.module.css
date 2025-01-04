@@ -1,0 +1,19 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 600px; /* Limit the width of the search bar */
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .searchInput:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+  }

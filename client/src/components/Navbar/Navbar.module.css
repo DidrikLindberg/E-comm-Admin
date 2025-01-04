@@ -1,0 +1,98 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Align items */
+  align-items: center; /* Center items vertically */
+  padding: 1rem 2rem; /* Consistent padding */
+  background-color: #282c34; /* Background color */
+  color: white; /* Text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.navbar a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin: 0 1rem; /* Consistent margin between links */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Container for Navbar Content */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand Logo and Name */
+.brand {
+  display: flex;
+  align-items: center;
+  color: #ff61a6; /* Pink color for brand */
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+/* Individual Navigation Link */
+.navLink {
+  color: #fff;
+  margin-left: 1rem; /* Space between nav links */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #ff61a6; /* Change color on hover */
+}
+
+/* Cart Button */
+.cartButton {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  margin-left: 1.5rem; /* Add margin to create space between nav links and cart icon */
+}
+
+/* Cart Count */
+.cartCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #ff3b30;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column; /* Stack links vertically on small screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .navLink {
+    margin: 0.5rem 0; /* Add margin for vertical spacing */
+  }
+}

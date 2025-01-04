@@ -1,0 +1,57 @@
+.featuredProductCard {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease; /* Slightly faster transition */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .featuredProductCard:hover {
+    transform: scale(1.03); /* Slightly enlarge the card on hover */
+  }
+  
+  .featuredProductImage {
+    width: 100%; /* Full width image */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    /* No hover effect on the image */
+  }
+  
+  .featuredProductInfo {
+    padding: 1rem; /* Padding around the details */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    flex-grow: 1; /* Allow this section to grow and take available space */
+  }
+  
+  .featuredProductTitle {
+    font-size: 1.25rem; /* Larger title */
+    font-weight: 600; /* Bold title */
+    color: #4A5568; /* Darker text color */
+  }
+  
+  .featuredProductPrice {
+    font-size: 1.5rem; /* Larger price */
+    font-weight: 700; /* Bold price */
+    color: #2D3748; /* Darker price color */
+  }
+  
+  .featuredProductDescription {
+    color: #718096; /* Lighter description color */
+    margin-top: 0.5rem; /* Space above description */
+  }
+  
+  .buyNowButton {
+    margin-top: 1rem; /* Space above button */
+    background-color: #3182CE; /* Blue background */
+    color: white; /* White text */
+    padding: 0.5rem; /* Padding */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .buyNowButton:hover {
+    background-color: #2B6CB0; /* Darker blue on hover */
+  }

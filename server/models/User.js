@@ -7,6 +7,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  person: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'PersonAccount' 
+  },
   email: {
     type: String,
     required: true,
@@ -19,6 +23,22 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'customer'],
     required: true,
+  },
+});
+
+// Add a virtual `id` field that converts ObjectId to string
+userSchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+
+// Ensure virtual fields are included in JSON output
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform: (doc, ret) => {
+    ret.id = ret._id.toHexString(); // Convert _id to id
+    delete ret._id; // Remove _id from the response
+    delete ret.__v; // Remove version key
+    return ret;
   },
 });
 

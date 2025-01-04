@@ -1,10 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
+import './CartSidebar.css';
 
 const CartSidebar = ({ cart, onClose }) => {
-    console.log('Cart Length:', cart.length);
   return (
     <div className={`cart-sidebar ${cart.length > 0 ? 'show' : ''}`}>
       <div className="p-4">
@@ -14,25 +13,15 @@ const CartSidebar = ({ cart, onClose }) => {
         ) : (
           <div className="grid grid-cols-1 gap-4">
             {cart.map((cartItem) => (
-              <div
-                key={cartItem.product.id}
-                className="border p-4 rounded-lg shadow-md"
-              >
+              <div key={cartItem.product.id} className="border p-4 rounded-lg shadow-md">
                 <img
                   src={cartItem.product.image}
                   alt={cartItem.product.title}
                   className="w-12 h-12 object-cover rounded-md"
                 />
-                <h3 className="text-lg font-semibold">
-                  {cartItem.product.title}
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Quantity: {cartItem.quantity}
-                </p>
-                <p className="mt-2 text-gray-700">
-                  Total: ${(cartItem.product.price || 0) * cartItem.quantity}
-                </p>
-                {/* Add more details as needed */}
+                <h3 className="text-lg font-semibold">{cartItem.product.title}</h3>
+                <p className="mt-2 text-gray-700">Quantity: {cartItem.quantity}</p>
+                <p className="mt-2 text-gray-700">Total: ${(cartItem.product.price || 0) * cartItem.quantity}</p>
               </div>
             ))}
           </div>

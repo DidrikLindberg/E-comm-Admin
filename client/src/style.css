@@ -1,4 +1,14 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .clip-bottom-left {
+        border-radius: 0 0 0 50%; /* Applies a curve to the bottom-left corner */
+        overflow: hidden;
+      }
+    .clip-top-right {
+        border-radius: 0 50% 0 0; /* Applies a curve to the top-right corner */
+        overflow: hidden; /* Ensures that content does not overflow the rounded corners */
+      }
+}

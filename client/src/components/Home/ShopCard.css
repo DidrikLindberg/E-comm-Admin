@@ -1,0 +1,58 @@
+/* src/components/ShopCard.css */
+.shop-card {
+    background-color: #f9fafb; /* Light gray background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 15px; /* Margin for spacing */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s; /* Smooth transition */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Max width for cards */
+}
+
+.shop-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.shop-image {
+    width: 100%; /* Full width image */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.shop-details {
+    padding: 15px; /* Padding for details */
+}
+
+.shop-title {
+    font-size: 1.5rem; /* Title font size */
+    font-weight: bold; /* Bold title */
+    margin: 0; /* Remove default margin */
+}
+
+.shop-address {
+    font-size: 1rem; /* Address font size */
+    color: #6b7280; /* Gray color for address */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.shop-description {
+    color: #4A5568; /* Darker description color */
+    margin-top: 0.5rem; /* Space above description */
+}
+
+.learn-more {
+    background-color: #ff5722; /* Bold color for button */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Block display for button */
+    margin-top: 10px; /* Margin for spacing */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.learn-more:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}

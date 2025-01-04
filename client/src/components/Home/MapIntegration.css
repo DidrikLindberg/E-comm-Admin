@@ -1,0 +1,11 @@
+/* src/components/Home/MapIntegration.css */
+.map-integration {
+    padding: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px; /* Fixed height for the map */
+    background-color: #e5e5e5; /* Placeholder color */
+    position: relative; /* Position for map pins */
+}
